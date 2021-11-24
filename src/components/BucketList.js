@@ -2,11 +2,11 @@ import React from 'react'
 import BucketItem from './BucketItem'
 // import './BucketListView.css'
 
-function BucketList({countries}) {
+const BucketList = ({countries, onCountryVisited}) => {
     
     const bucketComponents = countries.map(country => {
             return (
-                <BucketItem country={country}/>
+                <BucketItem country={country} key = {country.id} onCountryVisited={onCountryVisited}/>
             )
         })
 

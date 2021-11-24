@@ -2,18 +2,9 @@ import React from 'react';
 import BucketListViewer from '../components/BucketList';
 import {useState, useEffect} from 'react';
 
-function BucketListContainer() {
+const BucketListContainer = () => {
     
     const [countries, setCountries] = useState([])
-    
-    // useEffect(()=>{
-    //     fetch("https://restcountries.com/v3.1/all")
-    //     .then(resp=>resp.json())
-    //     .then(data=>{
-    //     setCountries(data)
-    //     console.log(data)});
-    // }, [])
-
     
     const getCountryData = () => {
         fetch("https://restcountries.com/v3.1/all")
@@ -21,12 +12,27 @@ function BucketListContainer() {
         .then(data => setCountries(data))
     }
 
+    const updateCountryVisited = (id) => {
+        console.log("updating country" + id);
+        const countryToUpdate = countries[id-1];
+        countryToUpdate.completed = true;
+
+        fetch(`https://restcountries.com/v3.1/all/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(countryToUpdate)
+        })
+            .then(getCountryData);
+    }
+
     useEffect(getCountryData, []);
 
     return (
-        countries  ? 
+        countries.length > 0  ? 
         <div>
-            <BucketListViewer countries={countries}/>
+            <BucketListViewer countries={countries} onCountryVisited={updateCountryVisited}/>
         </div>
         : 
         <p>...Loading</p>
