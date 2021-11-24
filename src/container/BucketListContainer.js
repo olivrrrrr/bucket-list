@@ -1,5 +1,5 @@
 import React from 'react'; 
-import BucketListViewer from '../components/BucketListViewer';
+import BucketListViewer from '../components/BucketList';
 import {useState, useEffect} from 'react';
 
 function BucketListContainer() {
@@ -21,21 +21,14 @@ function BucketListContainer() {
         .then(data => setCountries(data))
     }
 
-   
-
     useEffect(getCountryData, []);
 
     return (
-
         countries  ? 
-
         <div>
-            {/* <BucketListViewer countries={countries}/> */}
-            {countries.map(country =>{ return ( <li>{country.name}</li>)})}
+            <BucketListViewer countries={countries}/>
         </div>
-
         : 
-
         <p>...Loading</p>
     )
 }

@@ -1,0 +1,16 @@
+*{
+    background-color: hotpink;
+     
+}
+
+.bucket-list-container{
+  
+    border: 1px solid black; 
+    
+}
+
+.bucket-list{
+    display: grid;
+    grid-gap: 0; 
+    grid-template-columns: repeat(3, 1fr);
+}
