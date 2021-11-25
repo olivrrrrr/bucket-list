@@ -46,7 +46,7 @@ const BucketListContainer = () => {
         countries.length > 0  ? 
        
        <div className="bucket-list-viewer">
-            <form>
+            <form className="search">
                 <input type="text" value={filter} onChange={handleFilterChange}/>
             </form>
             <BucketListViewer countries={search(countries)} onCountryVisited={updateCountryVisited}/>

@@ -18,15 +18,45 @@ body {
   color: white;
   
 }
+
+body.light-theme {
+  background-color: rgb(194, 152, 160);
+  color: rgb(53, 2, 2);
+
+  
+}
+
 /* Navbar */
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+  padding: 20px 0;
+  flex-wrap: wrap;
+  color: rgb(140, 75, 75);
 }
 
+navbar.light-theme{
+  color: rgb(43, 8, 14);
+}
+
+/* Filter */
+
+.filter{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 20px;
+ 
+}
+
+.search{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 20px;
+}
 /* Grid */
 .bucket-list-container{
   /* border: 1px solid black;  */
@@ -49,13 +79,17 @@ body {
 }
 
 .bucket-list-container .details {
-  background-color: rgb(77, 33, 33);
+  background-color: rgb(154, 89, 89);
   width: 17em; 
   padding: 20px;
   margin-top: -10px;
   border-radius: 20px 20px 20px 20px;
   align-items: center;
   height: 20em; 
+}
+
+.bucket-list-container .details .light-theme {
+  background-color: var(pink);
 }
 
 .bucket-list-container .details h3 {
