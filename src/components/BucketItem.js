@@ -16,16 +16,20 @@ const BucketItem = ({country, onCountryVisited}) => {
     // const bucketListCountryCurrency = bucketListCountry.map(country => country.flag)
     
     return (
-        <div className = {country.visited ? "country visited" : "country"}>
-            <div className="bucket-list">
-               <p> {country.name.common}</p>
-               <p> {country.capital}</p>
-               <p> {country.flag}</p> 
-               <h4>Visited?</h4>
-               <p>{country.visited ? "Yes" : "No" }</p>
-               <hr/>
-               <button onClick={() => onCountryVisited(country.id)}>Visited</button>
-            </div>
+        <div className = {country.visited ? "country_visited bucket-list-container" : "country_not_visited bucket-list-container"} >           
+              
+               <p className = "name"> {country.name.common}</p>
+               <p className = "capital"> {country.capital}</p>
+               <p className = "flag"> {country.flag}</p> 
+              
+               {/* <h4>Visited?</h4>
+               <p>{country.visited ? "Yes" : "No" }</p> */}
+               {/* <hr/> */}
+           
+                {/* <button onClick={() => onCountryVisited(country.id)} class="button" role="button"><span class="text">Visited</span></button> */}
+               {/* <button onClick={() => onCountryVisited(country.id)}>Visited</button> */}
+               
+               <button onClick={() => onCountryVisited(country.id)} className="button" role="button">Visited</button>
         </div>
     )
 }
