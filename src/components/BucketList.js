@@ -1,6 +1,6 @@
 import React from 'react'
 import BucketItem from './BucketItem'
-// import './BucketListView.css'
+import './BucketList.css'
 
 const BucketList = ({countries, onCountryVisited}) => {
     

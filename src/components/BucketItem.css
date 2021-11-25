@@ -7,7 +7,7 @@
 }
 
 img{
-  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -15,6 +15,7 @@ body {
   padding: 20px;
   background-color: rgb(26, 6, 3);
   color: white;
+  
 }
 /* Navbar */
 
@@ -37,18 +38,21 @@ body {
   grid-gap: 30px;
   margin-top: 20px;
   grid-auto-columns: 4fr;
+  
 }
 
+
 .bucket-list-container img {
-  border-radius: 20px 20px 0 0;
+  /* border-radius: 20px 20px 0 0; */
  
 }
 
 .bucket-list-container .details {
   background-color: rgb(77, 33, 33);
+  width: 17em; 
   padding: 20px;
   margin-top: -10px;
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px 20px 20px 20px;
   align-items: center;
 }
 
@@ -62,6 +66,14 @@ body {
 
 .bucket-list-container .details h4 span {
   font-weight: 300;
+}
+
+.button{
+  background:none;
+  border: 1px solid white; 
+  color: white; 
+  padding: 1em; 
+  margin: 1em; 
 }
 
 @media (min-width: 640px) {

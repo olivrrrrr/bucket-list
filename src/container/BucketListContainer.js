@@ -1,6 +1,7 @@
 import React from 'react'; 
 import BucketListViewer from '../components/BucketList';
 import {useState, useEffect} from 'react';
+import './BucketListContainer.css'
 
 const BucketListContainer = () => {
     
@@ -43,7 +44,8 @@ const BucketListContainer = () => {
 
     return (
         countries.length > 0  ? 
-        <div>
+       
+       <div className="bucket-list-viewer">
             <form>
                 <input type="text" value={filter} onChange={handleFilterChange}/>
             </form>

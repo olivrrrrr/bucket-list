@@ -1,5 +1,6 @@
 import React from 'react'
 import './BucketItem.css'
+import {useState} from 'react'
 
 const BucketItem = ({country, onCountryVisited}) => {
     
@@ -15,20 +16,31 @@ const BucketItem = ({country, onCountryVisited}) => {
     // // Capital Name
     // const bucketListCountryCurrency = bucketListCountry.map(country => country.flag)
     
+    const [isChecked, setIsChecked] = useState(false); 
+
+    const handleOnChange = () => {
+        setIsChecked(!isChecked); 
+    }
+
     return (
         <section className="bucket-list-container">
         <div className = {country.visited ? "country visited" : "country"} >
             <div className="bucket-list">
 
                {/* <p> {country.flag}</p>  */}
-               <img src = {country.flags.svg} alt={country.name}/>
+               
 
                <div className="details">
-               <h3>{country.name.common}</h3>
-               <h4> Region: <span>{country.region}</span></h4>
-               <h4> Capital: <span>{country.capital}</span></h4>
-               <input type="checkbox"/>
-               <button onClick={() => onCountryVisited(country.id)} className="button" role="button">Visited</button>
+                    <img src = {country.flags.svg} alt={country.name}/>
+                    <h3>{country.name.common}</h3>
+                    <h4> Region: <span>{country.region}</span></h4>
+                    <h4> Capital: <span>{country.capital}</span></h4>
+                    <input type="checkbox" checked={isChecked}/>
+                    <div>
+                     <button onClick={() => handleOnChange()} className="button" role="button">Visited</button>
+                    </div>
+
+                    
                </div>
                {/* <h4>Visited?</h4>
                <p>{country.visited ? "Yes" : "No" }</p> */}
