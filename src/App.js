@@ -1,10 +1,11 @@
 import './App.css';
 import BucketListContainer from './container/BucketListContainer';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <h1>Countries To Visit Before You Kick The Bucket</h1>
+      <Navbar/>
       <BucketListContainer/>
     </div>
   );

@@ -24,7 +24,10 @@ const BucketListContainer = () => {
     const updateCountryVisited = (id) => {
         console.log("updating country" + id);
         const countryToUpdate = countries[id-1];
+        // countryToUpdate.completed = true;
+
         //countryToUpdate.visited = true;
+
 
         // fetch(`https://restcountries.com/v3.1/all/${id}`, {
         //     method: 'PUT',

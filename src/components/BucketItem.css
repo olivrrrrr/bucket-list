@@ -1,14 +1,102 @@
-*{
-    background-color: rgb(255, 255, 255);
-     
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+img{
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 20px;
+  background-color: rgb(26, 6, 3);
+  color: white;
+}
+/* Navbar */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+/* Grid */
+.bucket-list-container{
+  /* border: 1px solid black;  */
+  /* display: grid;
+  grid-template-columns: 1fr, 1fr; */
+  /* grid-template-columns: 1fr, 1fr, 1fr; */
+  display: grid;
+  grid: repeat(4, 270px);
+  justify-content: center;
+  grid-gap: 30px;
+  margin-top: 20px;
+  grid-auto-columns: 4fr;
+}
+
+.bucket-list-container img {
+  border-radius: 20px 20px 0 0;
+ 
+}
+
+.bucket-list-container .details {
+  background-color: rgb(77, 33, 33);
+  padding: 20px;
+  margin-top: -10px;
+  border-radius: 0 0 20px 20px;
+  align-items: center;
+}
+
+.bucket-list-container .details h3 {
+  padding-bottom: 10px;
+}
+
+.bucket-list-container .details h4 {
+  padding-bottom: 5px;
+}
+
+.bucket-list-container .details h4 span {
+  font-weight: 300;
+}
+
+@media (min-width: 640px) {
+  .bucket-list-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .bucket-list-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .bucket-list-container{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+
+
+/* .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}  */
 
 /* .bucket-list-container{
   
     border: 1px solid black; 
     
 } */
-
+/* 
 .bucket-list-container{
     
     width: 15em;
@@ -35,9 +123,9 @@
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-}
+} */
 
-.button{
+/* .button{
     align-self: center;
     background-color: #fff;
     background-image: none;
@@ -75,14 +163,10 @@
   
   .button:focus {
     box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-  }
+  } */
   
-.visited{
+/* .visited{
     background-color: rgb(250, 226, 255);
-  }
-/* .bucket-list{
-    
-    display: grid;
-    grid-gap: 0; 
-    grid-template-columns: repeat(3, 1fr);
-} */
+  } */
+
+
