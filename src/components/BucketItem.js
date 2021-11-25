@@ -32,7 +32,7 @@ const BucketItem = ({country, onCountryVisited}) => {
 
                <div className="details">
                     <img src = {country.flags.svg} alt={country.name}/>
-                    <h3>{country.name.common}</h3>
+                    <h3 className= "country-name">{country.name.common}</h3>
                     <h4> Region: <span>{country.region}</span></h4>
                     <h4> Capital: <span>{country.capital}</span></h4>
                     <input type="checkbox" checked={isChecked}/>
