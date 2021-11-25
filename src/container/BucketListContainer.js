@@ -4,8 +4,17 @@ import {useState, useEffect} from 'react';
 
 const BucketListContainer = () => {
     
-    const [countries, setCountries] = useState([])
-    
+    const [countries, setCountries] = useState([]);
+    const [filter, setFilter] = useState("");  
+
+    const handleFilterChange = (e) => {
+        setFilter(e.target.value); 
+    }
+
+    const search = (countries) => {
+        return countries.filter((country) => country.name.common.toLowerCase().indexOf(filter) > -1); 
+    }
+
     const getCountryData = () => {
         fetch("https://restcountries.com/v3.1/all")
         .then(resp=>resp.json())
@@ -16,6 +25,9 @@ const BucketListContainer = () => {
         console.log("updating country" + id);
         const countryToUpdate = countries[id-1];
         // countryToUpdate.completed = true;
+
+        //countryToUpdate.visited = true;
+
 
         // fetch(`https://restcountries.com/v3.1/all/${id}`, {
         //     method: 'PUT',
@@ -32,7 +44,10 @@ const BucketListContainer = () => {
     return (
         countries.length > 0  ? 
         <div>
-            <BucketListViewer countries={countries} onCountryVisited={updateCountryVisited}/>
+            <form>
+                <input type="text" value={filter} onChange={handleFilterChange}/>
+            </form>
+            <BucketListViewer countries={search(countries)} onCountryVisited={updateCountryVisited}/>
         </div>
         : 
         <p>...Loading</p>

@@ -33,6 +33,9 @@ const BucketItem = ({country, onCountryVisited}) => {
                <p>{country.visited ? "Yes" : "No" }</p> */}
                {/* <button onClick={() => onCountryVisited(country.id)}>Visited</button> */}
             </div>
+               <input type="checkbox"/>
+               <button onClick={() => onCountryVisited(country.id)} className="button" role="button">Visited</button>
+
         </div>
         </section>
 
